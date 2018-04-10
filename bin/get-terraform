@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+pushd /tmp
+
+ZIP_FILE=terraform_0.11.6_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.11.6/"$ZIP_FILE"
+unzip "$ZIP_FILE"
+mkdir -p ~/bin/
+cp terraform ~/bin/

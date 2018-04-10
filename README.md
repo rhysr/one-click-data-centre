@@ -1,1 +1,4 @@
-Download terraform https://www.terraform.io/downloads.html
+Download terraform
+```sh
+./bin/get-terraform
+```
