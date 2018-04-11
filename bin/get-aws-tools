@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+pushd /tmp
+PIP_EXISTS="$(command -v pip || true)"
+if [[ -z "$PIP_EXISTS" ]]; then
+    rm /tmp/get-pip.py
+    wget https://bootstrap.pypa.io/get-pip.py
+    python /tmp/get-pip.py --user
+fi
+
+
+AWS_EXISTS="$(command -v aws || true)"
+if [[ -z "$AWS_EXISTS" ]]; then
+    pip install --user awscli
+fi
+
+aws configure
